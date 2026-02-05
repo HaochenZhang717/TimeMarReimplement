@@ -1,0 +1,431 @@
+Using device: cpu
+Using config: configs/train_vq_stock.yaml
+no dim in config
+load data from config
+> /Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py(239)main()
+-> if args.resume is not None:
+AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    initial_lr: 0.0001
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0.0
+)
+DualVQVAE(
+  (decomp_ts): series_decomp_multi(
+    (layer): Linear(in_features=1, out_features=2, bias=True)
+  )
+  (encoder_trend): Encoder(
+    (conv_in): Conv1d(6, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+    (down): ModuleList(
+      (0-1): 2 x Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (downsample): Downsample2x(
+          (conv): Conv1d(256, 256, kernel_size=(3,), stride=(2,))
+        )
+      )
+      (2): Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Conv1d(256, 512, kernel_size=(1,), stride=(1,))
+          )
+        )
+        (attn): ModuleList()
+      )
+    )
+    (mid): Module(
+      (block_1): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+      (attn_1): Identity()
+      (block_2): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+    )
+    (norm_out): GroupNorm(16, 512, eps=1e-06, affine=True)
+    (conv_out): Conv1d(512, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+  (decoder_trend): Decoder(
+    (conv_in): Conv1d(256, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+    (mid): Module(
+      (block_1): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+      (attn_1): Identity()
+      (block_2): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+    )
+    (up): ModuleList(
+      (0): Module(
+        (block): ModuleList(
+          (0-1): 2 x ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+      )
+      (1): Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (conv1): Conv1d(512, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Conv1d(512, 256, kernel_size=(1,), stride=(1,))
+          )
+          (1): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (upsample): Upsample2x(
+          (conv): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+        )
+      )
+      (2): Module(
+        (block): ModuleList(
+          (0-1): 2 x ResnetBlock(
+            (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (upsample): Upsample2x(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        )
+      )
+    )
+    (norm_out): GroupNorm(16, 256, eps=1e-06, affine=True)
+    (conv_out): Conv1d(256, 6, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+  (quant_conv_trend): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  (post_quant_conv_trend): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  (res_combine): SymmetricFusion(
+    (fc_fusion): Linear(in_features=768, out_features=256, bias=True)
+  )
+  (decomp_latent): SymmetricDecomp(
+    (fc_decomp): Linear(in_features=256, out_features=768, bias=True)
+  )
+  (encoder_seasonal): GuidedEncoder(
+    (conv_in): Conv1d(6, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+    (spec_extractor): SpectralFeatureExtractor(
+      (mlp): Sequential(
+        (0): Linear(in_features=24, out_features=256, bias=True)
+        (1): GELU(approximate='none')
+        (2): Linear(in_features=256, out_features=256, bias=True)
+      )
+    )
+    (down): ModuleList(
+      (0): Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (cross): ModuleList(
+          (0): DummyCross()
+        )
+        (downsample): Downsample2x(
+          (conv): Conv1d(256, 256, kernel_size=(3,), stride=(2,))
+        )
+      )
+      (1): Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList()
+        (cross): ModuleList(
+          (0): CrossAttnBlock(
+            (guide_proj): Identity()
+            (attn): MultiheadAttention(
+              (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+            )
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (downsample): Downsample2x(
+          (conv): Conv1d(256, 256, kernel_size=(3,), stride=(2,))
+        )
+      )
+      (2): Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Conv1d(256, 512, kernel_size=(1,), stride=(1,))
+          )
+        )
+        (attn): ModuleList()
+        (cross): ModuleList(
+          (0): DummyCross()
+        )
+      )
+    )
+    (cross): ModuleList(
+      (0): ModuleList(
+        (0): DummyCross()
+      )
+      (1): ModuleList(
+        (0): CrossAttnBlock(
+          (guide_proj): Identity()
+          (attn): MultiheadAttention(
+            (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+          )
+          (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+        )
+      )
+      (2): ModuleList(
+        (0): DummyCross()
+      )
+    )
+    (mid): Module(
+      (block_1): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+      (attn_1): Identity()
+      (block_2): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+    )
+    (norm_out): GroupNorm(16, 512, eps=1e-06, affine=True)
+    (conv_out): Conv1d(512, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+  (decoder_seasonal): GuidedDecoder(
+    (conv_in): Conv1d(256, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+    (mid): Module(
+      (block_1): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+      (attn_1): Identity()
+      (block_2): ResnetBlock(
+        (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+        (dropout): Identity()
+        (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        (nin_shortcut): Identity()
+      )
+    )
+    (up): ModuleList(
+      (0): Module(
+        (block): ModuleList(
+          (0-1): 2 x ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList(
+          (0-1): 2 x Identity()
+        )
+        (cross): ModuleList(
+          (0-1): 2 x CrossAttnBlock(
+            (guide_proj): Conv1d(6, 256, kernel_size=(1,), stride=(1,))
+            (attn): MultiheadAttention(
+              (out_proj): NonDynamicallyQuantizableLinear(in_features=256, out_features=256, bias=True)
+            )
+            (norm): LayerNorm((256,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+      )
+      (1): Module(
+        (block): ModuleList(
+          (0): ResnetBlock(
+            (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (conv1): Conv1d(512, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Conv1d(512, 256, kernel_size=(1,), stride=(1,))
+          )
+          (1): ResnetBlock(
+            (norm1): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (conv1): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 256, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList(
+          (0-1): 2 x Identity()
+        )
+        (cross): ModuleList(
+          (0-1): 2 x DummyCross()
+        )
+        (upsample): Upsample2x(
+          (conv): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+        )
+      )
+      (2): Module(
+        (block): ModuleList(
+          (0-1): 2 x ResnetBlock(
+            (norm1): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (conv1): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (norm2): GroupNorm(16, 512, eps=1e-06, affine=True)
+            (dropout): Identity()
+            (conv2): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+            (nin_shortcut): Identity()
+          )
+        )
+        (attn): ModuleList(
+          (0-1): 2 x Identity()
+        )
+        (cross): ModuleList(
+          (0-1): 2 x DummyCross()
+        )
+        (upsample): Upsample2x(
+          (conv): Conv1d(512, 512, kernel_size=(3,), stride=(1,), padding=(1,))
+        )
+      )
+    )
+    (cross): ModuleList()
+    (norm_out): GroupNorm(16, 256, eps=1e-06, affine=True)
+    (conv_out): Conv1d(256, 6, kernel_size=(3,), stride=(1,), padding=(1,))
+  )
+  (quant_conv_seasonal): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  (post_quant_conv_seasonal): Conv1d(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+  (quantize): VectorQuantizer2(
+    [1, 2, 3, 4, 5, 6], znorm=True, beta=0.25  |  S=6, quant_resi=0.5
+    (quant_resi): PhiNonShared(
+      (0-5): 6 x Phi(256, 256, kernel_size=(3,), stride=(1,), padding=(1,))
+    )
+    (embedding): Embedding(384, 256)
+  )
+  (downsample): AvgPool1d(kernel_size=(2,), stride=(2,), padding=(0,))
+  (upsample): Upsample(scale_factor=2.0, mode='linear')
+)
+*** NameError: name 'scheulder' is not defined
+<torch.optim.lr_scheduler.StepLR object at 0x2b7376f70>
+500
+0.5
+AdamW (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    capturable: False
+    differentiable: False
+    eps: 1e-08
+    foreach: None
+    fused: None
+    initial_lr: 0.0001
+    lr: 0.0001
+    maximize: False
+    weight_decay: 0.0
+)
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 335, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 239, in main
+    if args.resume is not None:
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 239, in main
+    if args.resume is not None:
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 335, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 239, in main
+    if args.resume is not None:
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 239, in main
+    if args.resume is not None:
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
