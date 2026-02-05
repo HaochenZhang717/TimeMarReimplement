@@ -19,7 +19,7 @@ from omegaconf import OmegaConf
 
 
 # -------------------------
-# Helpers
+# Helper
 # -------------------------
 def get_loss_fn(loss_name: str):
     loss = loss_name.lower()

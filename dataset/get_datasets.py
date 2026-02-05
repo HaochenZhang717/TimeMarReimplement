@@ -21,7 +21,7 @@ def instantiate_from_config(config):
     return cls(**config.get("params", dict()))
 
 
-def build_dataset(config, args=None):
+def build_dataset(config):
     #  Config 
     dataloader_config = config.dataloader  #  dataloader  Struct 
 
@@ -71,7 +71,7 @@ def build_dataloader(config, args=None):
         print("data load from:", file_path)
     else:
         print("load data from config")
-        train_dataset, val_dataset = build_dataset(config, args)
+        train_dataset, val_dataset = build_dataset(config)
 
     train_loader = torch.utils.data.DataLoader(
         train_dataset,

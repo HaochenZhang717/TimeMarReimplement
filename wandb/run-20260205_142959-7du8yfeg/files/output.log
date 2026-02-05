@@ -1,0 +1,34 @@
+Using device: cuda
+Using config: configs/train_vq_stock.yaml
+no dim in config
+> /Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py(56)build_dataloader()
+-> if dim==5:
+0
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 323, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 219, in main
+    train_loader, val_loader = build_dataloader(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 56, in build_dataloader
+    if dim==5:
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 56, in build_dataloader
+    if dim==5:
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 323, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 219, in main
+    train_loader, val_loader = build_dataloader(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 56, in build_dataloader
+    if dim==5:
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 56, in build_dataloader
+    if dim==5:
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit

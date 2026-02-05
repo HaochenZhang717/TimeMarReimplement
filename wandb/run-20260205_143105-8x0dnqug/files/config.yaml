@@ -1,0 +1,103 @@
+_wandb:
+    value:
+        cli_version: 0.18.6
+        m: []
+        python_version: 3.9.19
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+                - 55
+            "2":
+                - 1
+                - 5
+                - 53
+                - 55
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.9.19
+            "5": 0.18.6
+            "8":
+                - 5
+            "12": 0.18.6
+            "13": darwin-arm64
+batch_size:
+    value: 128
+beta:
+    value: 0.25
+ch:
+    value: 256
+ch_mult:
+    value:
+        - 1
+        - 1
+        - 2
+dataloader:
+    value:
+        params:
+            data_root: ./dataset/stock_data.csv
+            name: stock
+            neg_one_to_one: true
+            period: train
+            proportion: 1
+            save2npy: true
+            seed: 123
+            window: 24
+        target: Utils.real_datasets.CustomDataset
+default_qresi_counts:
+    value: 0
+devices:
+    value:
+        - 0
+dropout:
+    value: 0
+in_channels:
+    value: 6
+load_dir:
+    value: null
+load_v_num:
+    value: null
+load_ver:
+    value: null
+loss:
+    value: mse
+lr:
+    value: 0.0001
+lr_decay_rate:
+    value: 0.5
+lr_decay_steps:
+    value: 500
+lr_scheduler:
+    value: step
+model_name:
+    value: DualVQVAE
+output_dir:
+    value: output
+quant_conv_ks:
+    value: 3
+quant_resi:
+    value: 0.5
+seed:
+    value: 1234
+share_quant_resi:
+    value: 0
+test_mode:
+    value: false
+using_znorm:
+    value: true
+v_patch_nums:
+    value:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+vocab_size:
+    value: 384
+z_channels:
+    value: 256

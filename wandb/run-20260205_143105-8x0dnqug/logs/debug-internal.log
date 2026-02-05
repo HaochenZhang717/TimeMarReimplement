@@ -1,0 +1,16 @@
+{"time":"2026-02-05T14:31:05.472949-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2026-02-05T14:31:05.472989-06:00","level":"INFO","msg":"created symlink","path":"/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/wandb/run-20260205_143105-8x0dnqug/logs/debug-core.log"}
+{"time":"2026-02-05T14:31:05.581445-06:00","level":"INFO","msg":"created new stream","id":"8x0dnqug"}
+{"time":"2026-02-05T14:31:05.581481-06:00","level":"INFO","msg":"stream: started","id":"8x0dnqug"}
+{"time":"2026-02-05T14:31:05.581505-06:00","level":"INFO","msg":"sender: started","stream_id":"8x0dnqug"}
+{"time":"2026-02-05T14:31:05.581507-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"8x0dnqug"}}
+{"time":"2026-02-05T14:31:05.5815-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"8x0dnqug"}}
+{"time":"2026-02-05T14:31:05.8737-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-05T14:32:12.333213-06:00","level":"INFO","msg":"stream: closing","id":"8x0dnqug"}
+{"time":"2026-02-05T14:32:12.333277-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-05T14:32:12.334293-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-05T14:32:12.934768-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-05T14:32:13.119527-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"8x0dnqug"}}
+{"time":"2026-02-05T14:32:13.119549-06:00","level":"INFO","msg":"sender: closed","stream_id":"8x0dnqug"}
+{"time":"2026-02-05T14:32:13.119542-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"8x0dnqug"}}
+{"time":"2026-02-05T14:32:13.119836-06:00","level":"INFO","msg":"stream: closed","id":"8x0dnqug"}

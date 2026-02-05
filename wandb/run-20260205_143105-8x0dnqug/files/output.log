@@ -1,0 +1,37 @@
+Using device: cuda
+Using config: configs/train_vq_stock.yaml
+no dim in config
+load data from config
+> /Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py(77)build_dataloader()
+-> train_loader = torch.utils.data.DataLoader(
+3662
+128
+None
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 323, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 219, in main
+    train_loader, val_loader = build_dataloader(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 77, in build_dataloader
+    train_loader = torch.utils.data.DataLoader(
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 77, in build_dataloader
+    train_loader = torch.utils.data.DataLoader(
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 323, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 219, in main
+    train_loader, val_loader = build_dataloader(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 77, in build_dataloader
+    train_loader = torch.utils.data.DataLoader(
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 77, in build_dataloader
+    train_loader = torch.utils.data.DataLoader(
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 88, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/bdb.py", line 113, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
