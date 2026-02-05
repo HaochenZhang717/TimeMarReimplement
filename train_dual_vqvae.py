@@ -298,15 +298,15 @@ def main():
             wandb.log(stats)
             print(
                 f"[VAL E{epoch:04d}] "
-                f"valid_loss={stats['valid_loss']:.4f} "
-                f"fid={stats['fid']:.6f} "
-                f"generate_len={stats['generate_len']}"
+                f"valid_loss={stats['eval/valid_loss']:.4f} "
+                f"fid={stats['eval/fid']:.6f} "
+                f"generate_len={stats['eval/generate_len']}"
             )
-            display_scores([stats["fid"]])
+            display_scores([stats["eval/fid"]])
 
             # ReduceLROnPlateau step needs metric
             if scheduler is not None and isinstance(scheduler, lrs.ReduceLROnPlateau):
-                scheduler.step(stats["valid_loss"])
+                scheduler.step(stats["eval/valid_loss"])
 
             # save latest
             latest_path = os.path.join(ckpt_dir, "latest.pt")
