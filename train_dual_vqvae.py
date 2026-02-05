@@ -104,7 +104,7 @@ def load_ckpt(path, model, optimizer=None, scheduler=None, map_location="cpu"):
     return start_epoch, best_fid
 
 
-@torch.no_grad()
+# @torch.no_grad()
 def run_validation_and_fid(model, val_loader, loss_fn, device):
     model.eval()
 
@@ -119,9 +119,10 @@ def run_validation_and_fid(model, val_loader, loss_fn, device):
     for batch in val_loader:
         batch = batch.to(device)
 
-        (trend, seasonal, coarse_seasonal,
-         recon_trend, recon_seasonal, recon_coarse_seasonal,
-         x_hat, usages, vq_loss) = model(batch, ret_usages=True)
+        with torch.no_grad():
+            (trend, seasonal, coarse_seasonal,
+             recon_trend, recon_seasonal, recon_coarse_seasonal,
+             x_hat, usages, vq_loss) = model(batch, ret_usages=True)
 
         l_reconstruct = loss_fn(batch, x_hat)
         l_trend = loss_fn(trend, recon_trend)
