@@ -1,8 +1,0 @@
-DATA="stock"
-CUDA_VISIBLE_DEVICES=7 python train_dual_vqvae.py \
---data ${DATA} \
---config "configs/train_vq_${DATA}.yaml" \
---device "cuda:0" \
---max_epochs 5000 \
---val_every 100 \
---save_dir "dual_vqvae_save_dir"

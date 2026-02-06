@@ -34,6 +34,7 @@ dataloader:
     period: train
 
 batch_size: 512
+max_epochs: 900
 
 vqvae_args:
   vocab_size: 384
@@ -51,3 +52,11 @@ vqvae_args:
   test_mode: True
   ch_mult: [1,1,2]
 
+var_args:
+  embed_dim: 1024
+  block_size: 21
+  num_layers: 1
+  n_head: 16
+  drop_out_rate: 0.0
+  fc_rate: 4
+  patch_nums: [1, 2, 3, 4, 5, 6]

@@ -50,7 +50,7 @@ def build_dataloader(config, args=None):
 
     if dim==5:
         if config.dataloader.params.window==24:
-            file_path=f'output/samples/Sines_ground_truth_24_train.npy'  
+            file_path=f'../output/samples/Sines_ground_truth_24_train.npy'
             train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
             # val_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
             total_size = len(train_dataset)
@@ -60,7 +60,7 @@ def build_dataloader(config, args=None):
             val_dataset = Subset(train_dataset, val_indices)
             print("data load from:", file_path)
     elif dim==14:
-        file_path=f'output/samples/Mujoco_norm_truth_24_train.npy'
+        file_path=f'../output/samples/Mujoco_norm_truth_24_train.npy'
         train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
         val_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
         print("data load from:", file_path)
@@ -92,12 +92,12 @@ from torch.utils.data import ConcatDataset
 
 def build_dataloader_var(config, data, args=None, window=24):
     if data=="Sines":
-        file_path=f'output/samples/{data}_ground_truth_{window}_train.npy' 
+        file_path=f'../output/samples/{data}_ground_truth_{window}_train.npy'
     elif data=="Mujoco":
-        file_path=f'output/samples/{data}_norm_truth_{window}_train.npy'
+        file_path=f'../output/samples/{data}_norm_truth_{window}_train.npy'
     else:
         window = config['dataloader']['params']['window']
-        file_path=f'output/samples/{data}_norm_truth_{window}_train.npy'
+        file_path=f'../output/samples/{data}_norm_truth_{window}_train.npy'
      
     train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
     ori_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
