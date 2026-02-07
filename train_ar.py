@@ -204,9 +204,8 @@ def train_ar(
     vqvae = DualVQVAE(**config.vqvae_args)
     if vqvae_ckpt_path is not None:
         ckpt = torch.load(vqvae_ckpt_path, map_location="cpu", weights_only=False)
-        print(ckpt.keys())
-        breakpoint()
-        state_dict = ckpt["state_dict"] if "state_dict" in ckpt else ckpt
+        assert 'state_dict' in ckpt
+        state_dict = ckpt['state_dict']
         vqvae.load_state_dict(state_dict, strict=True)
 
     vqvae.to(device)

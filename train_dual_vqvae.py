@@ -243,6 +243,7 @@ def main():
     os.makedirs(ckpt_dir, exist_ok=True)
 
     # ---- train loop ----
+    global_step = 0
     for epoch in range(start_epoch, args.max_epochs):
         model.train()
         t0 = time.time()
@@ -250,7 +251,7 @@ def main():
         running_loss = 0.0
         n_batches = 0
 
-        for step, batch in enumerate(train_loader):
+        for batch in train_loader:
             batch = batch.to(device)
 
             (trend, seasonal, coarse_seasonal,
@@ -274,7 +275,7 @@ def main():
                 "train/loss_fft": l_fft.item(),
 
                 "train/epoch": epoch,
-                "train/step": step,
+                "train/step": global_step,
                 "train/usage": usages,
             })
 
@@ -282,6 +283,7 @@ def main():
             optimizer.step()
             optimizer.zero_grad()
 
+            global_step += 1
             running_loss += float(loss.item())
             n_batches += 1
 
