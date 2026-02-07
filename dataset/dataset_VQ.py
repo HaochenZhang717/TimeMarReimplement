@@ -11,7 +11,7 @@ class TSDataset(data.Dataset):
         self.window_size = window_size
         self.unit_length = unit_length
         self.dataset_name = dataset_name
-        breakpoint()
+        # breakpoint()
         if dataset_name == 'stock':
             csv_path = './dataset/stock_data.csv'
         elif dataset_name == 'energy':
@@ -89,7 +89,7 @@ class TSDataset(data.Dataset):
 
     def __getitem__(self, item):
         data = self.data[item:item+self.window_size]
-        breakpoint()
+        # breakpoint()
         return data
 
 def DATALoader(dataset_name,

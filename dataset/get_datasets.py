@@ -13,8 +13,8 @@ def instantiate_from_config(config):
         raise KeyError("Expected key `target` to instantiate.")
     module, cls = config["target"].rsplit(".", 1)
     cls = getattr(importlib.import_module(module, package=None), cls)
-    print(cls)
-    breakpoint()
+    # print(cls)
+    # breakpoint()
     return cls(**config.get("params", dict()))
 
 
