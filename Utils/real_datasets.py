@@ -45,7 +45,7 @@ class CustomDataset(Dataset):
 
         self.data = self.__normalize(self.rawdata)
         train, inference = self.__getsamples(self.data, proportion, seed)
-
+        breakpoint()
         self.samples = train if period == 'train' else inference
         if period == 'test':
             if missing_ratio is not None:
