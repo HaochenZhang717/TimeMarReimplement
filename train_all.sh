@@ -15,7 +15,7 @@ VQVAECKPT="/work/vb21/haochen/code/dual_vqvae_save_dir/vq_stock/checkpoints/late
 CUDA_VISIBLE_DEVICES=0 python train_dual_vqvae.py \
 --data ${DATA} \
 --config  ${VQVAECONFIG} \
---max_epochs 500 \
+--max_epochs 101 \
 --val_every 100 \
 --save_dir ${VQVAEDIR}
 
