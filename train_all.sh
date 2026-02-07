@@ -1,5 +1,5 @@
-#DATANAMES=("stock" "ETTh1" "ETTh2" "ETTm1" "ETTm2" "fmri" "energy" )
-DATANAMES=("stock" )
+DATANAMES=("stock" "ETTh1" "fmri" "energy" "ETTh2" "ETTm1" "ETTm2"  )
+#DATANAMES=("stock" )
 
 VQVAEDIR="../dual_vqvae_save_dir_0207"
 VARDIR="../var_save_dir_0207"
