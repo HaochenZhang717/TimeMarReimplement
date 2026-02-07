@@ -258,7 +258,7 @@ def train_ar(
         }, os.path.join(save_dir, "latest.pt"))
 
         # ---- FID ----
-        if epoch % 50 == 0 and epoch > 0:
+        if epoch % 100 == 0 and epoch > 0:
             if dataset_name in ["Sines", "Mujoco", "fMRI"]:
                 num = 10000
             elif dataset_name == "stock":
@@ -284,7 +284,8 @@ def train_ar(
                 torch.save({
                     "epoch": epoch,
                     "fid": fid,
-                    "model": model.state_dict(),
+                    "var_model": model.state_dict(),
+                    "dual_vqvae": vqvae.state_dict(),
                     "optimizer": optimizer.state_dict(),
                 }, ckpt_path)
                 print(f"Saved BEST checkpoint to {ckpt_path}")

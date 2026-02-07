@@ -65,7 +65,7 @@ class TSDataset(data.Dataset):
         data = scaler.fit_transform(data)
         # data = 2 * (data - self.min) / (self.max - self.min) - 1
         data = data.astype(np.float32)
-
+        breakpoint()
         if dataset_type == 'train':
             self.data = data[border1s[0]:border2s[0]]
         elif dataset_type == 'val':
@@ -103,9 +103,9 @@ def DATALoader(dataset_name,
     if dataset_name == 'Sines':
         data_dir = "./dataset/sine_ground_truth_24_train.npy"
         trainSet = np.load(data_dir)
-    elif dataset_name == 'Mujoco':
-        data_dir = "./dataset/mujoco_norm_truth_24_train.npy"
-        trainSet = np.load(data_dir)
+    # elif dataset_name == 'Mujoco':
+    #     data_dir = "./dataset/mujoco_norm_truth_24_train.npy"
+    #     trainSet = np.load(data_dir)
     else:
         trainSet = TSDataset(dataset_name, window_size=window_size, unit_length=unit_length, dataset_type=dataset_type)
 
