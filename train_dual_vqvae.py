@@ -153,7 +153,7 @@ def run_validation_and_fid(model, val_loader, loss_fn, device):
         "eval/valid_l_reconstruct": total_recon / max(1, n_batches),
         "eval/valid_vq_loss": total_vq / max(1, n_batches),
         "eval/fid": float(fid),
-        "eval/generate_num": int(len(outputs_np)),
+        "eval/generate_len": int(len(outputs_np)),
     }
 
 
