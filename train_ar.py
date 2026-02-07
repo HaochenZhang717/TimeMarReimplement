@@ -258,7 +258,7 @@ def train_ar(
         }, os.path.join(save_dir, "latest.pt"))
 
         # ---- FID ----
-        if epoch % config.fid_every == 0 and epoch > 0:
+        if epoch % 50 == 0 and epoch > 0:
             if dataset_name in ["Sines", "Mujoco", "fMRI"]:
                 num = 10000
             elif dataset_name == "stock":

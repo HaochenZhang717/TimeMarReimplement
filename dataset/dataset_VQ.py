@@ -16,10 +16,18 @@ class TSDataset(data.Dataset):
             csv_path = './dataset/stock_data.csv'
         elif dataset_name == 'energy':
             csv_path = './dataset/energy_data.csv'
-        elif dataset_name == 'etth':
-            csv_path = './dataset/ETTh.csv'
+        elif dataset_name == 'etth1':
+            csv_path = './dataset/ETTh1.csv'
+        elif dataset_name == 'etth2':
+            csv_path = './dataset/ETTh2.csv'
+        elif dataset_name == 'ettm1':
+            csv_path = './dataset/ETTm1.csv'
+        elif dataset_name == 'ettm2':
+            csv_path = './dataset/ETTm2.csv'
         elif dataset_name == 'fmri':
             csv_path = './dataset/sim4.mat'
+        else:
+            raise ValueError('Dataset name {} not recognized.'.format(dataset_name))
 
         if dataset_name in ['stock','energy']:
             data = pd.read_csv(csv_path).values.astype(float)

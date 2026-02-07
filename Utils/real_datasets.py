@@ -130,7 +130,8 @@ class CustomDataset(Dataset):
         """Reads a single .csv
         """
         df = pd.read_csv(filepath, header=0)
-        if name == 'ETTh':
+        # if name == 'ETTh':
+        if 'ETTh' in name:
             df.drop(df.columns[0], axis=1, inplace=True)
         data = df.values
         scaler = MinMaxScaler()
