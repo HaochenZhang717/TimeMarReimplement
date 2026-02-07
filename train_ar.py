@@ -6,8 +6,8 @@ import torch.nn as nn
 from torch.optim import AdamW
 from torch.optim.lr_scheduler import StepLR, CosineAnnealingLR, ReduceLROnPlateau
 
-from models.decomp import DualVQVAE
-from models.var import VAR
+from models import DualVQVAE
+from models import VAR
 from Utils.context_fid import Context_FID
 
 from dataset.get_datasets import build_dataloader_var
