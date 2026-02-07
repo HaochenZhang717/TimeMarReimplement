@@ -217,7 +217,7 @@ class DualVQVAE(nn.Module):
 
         return recon_trend, recon_coarse_seasonal, recon_seasonal
 
-    def load_state_dict(self, state_dict, strict=True, assign=False):
-        self.quantize_trend.load_state_dict(state_dict['quantize_trend'], strict)
-        self.quantize_seasonal.load_state_dict(state_dict['quantize_seasonal'], strict)
-        super().load_state_dict(state_dict, strict, assign)
+    # def load_state_dict(self, state_dict, strict=True, assign=False):
+    #     self.quantize_trend.load_state_dict(state_dict['quantize_trend'], strict)
+    #     self.quantize_seasonal.load_state_dict(state_dict['quantize_seasonal'], strict)
+    #     super().load_state_dict(state_dict, strict, assign)
