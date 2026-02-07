@@ -11,7 +11,7 @@ class TSDataset(data.Dataset):
         self.window_size = window_size
         self.unit_length = unit_length
         self.dataset_name = dataset_name
-
+        breakpoint()
         if dataset_name == 'stock':
             csv_path = './dataset/stock_data.csv'
         elif dataset_name == 'energy':
@@ -65,7 +65,7 @@ class TSDataset(data.Dataset):
         data = scaler.fit_transform(data)
         # data = 2 * (data - self.min) / (self.max - self.min) - 1
         data = data.astype(np.float32)
-        breakpoint()
+
         if dataset_type == 'train':
             self.data = data[border1s[0]:border2s[0]]
         elif dataset_type == 'val':
@@ -89,7 +89,7 @@ class TSDataset(data.Dataset):
 
     def __getitem__(self, item):
         data = self.data[item:item+self.window_size]
-
+        breakpoint()
         return data
 
 def DATALoader(dataset_name,
