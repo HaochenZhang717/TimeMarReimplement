@@ -92,12 +92,12 @@ from torch.utils.data import ConcatDataset
 
 def build_dataloader_var(config, data, args=None, window=24):
     if data=="Sines":
-        file_path=f'../output/samples/{data}_ground_truth_{window}_train.npy'
+        file_path=f'output/samples/{data}_ground_truth_{window}_train.npy'
     elif data=="Mujoco":
-        file_path=f'../output/samples/{data}_norm_truth_{window}_train.npy'
+        file_path=f'output/samples/{data}_norm_truth_{window}_train.npy'
     else:
         window = config['dataloader']['params']['window']
-        file_path=f'../output/samples/{data}_norm_truth_{window}_train.npy'
+        file_path=f'output/samples/{data}_norm_truth_{window}_train.npy'
      
     train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
     ori_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
