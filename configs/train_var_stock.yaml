@@ -1,10 +1,9 @@
 seed: 1234
 
-load_dir: log/vq_stock/version_0/checkpoints/best--epoch=499-fid=0.001299.ckpt
 load_ver: '0'
 load_v_num: 
 
-output_dir: output
+output_dir: ../output
 devices: [0]
 
 resume: False
