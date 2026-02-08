@@ -137,7 +137,7 @@ class CustomDataset(Dataset):
             scaler = scaler.fit(data)
             return data, scaler
         elif '.mat' in filepath:
-            data = io.loadmat(filepath + '/sim4.mat')['ts']
+            data = io.loadmat(filepath)['ts']
             scaler = MinMaxScaler()
             scaler = scaler.fit(data)
             return data, scaler
