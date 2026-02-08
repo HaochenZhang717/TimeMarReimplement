@@ -1,4 +1,0 @@
-Using device: cpu
-Using config: configs/train_vq_stock.yaml
-no dim in config
-load data from config
