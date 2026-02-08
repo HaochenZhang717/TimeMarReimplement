@@ -1,6 +1,5 @@
 #DATANAMES=("stock" "ETTh1" "fmri" "energy" "ETTh2" "ETTm1" "ETTm2"  )
-DATANAMES=("ETTh1" "fmri" "energy" "ETTh2" "ETTm1" "ETTm2"  )
-#DATANAMES=("stock" )
+DATANAMES=("energy" )
 
 VQVAEDIR="../dual_vqvae_save_dir_0207"
 for DATA in "${DATANAMES[@]}"
