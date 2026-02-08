@@ -1,0 +1,16 @@
+{"time":"2026-02-07T16:16:51.132861-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2026-02-07T16:16:51.132971-06:00","level":"INFO","msg":"created symlink","path":"/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/wandb/run-20260207_161651-5hkhpf45/logs/debug-core.log"}
+{"time":"2026-02-07T16:16:51.243896-06:00","level":"INFO","msg":"created new stream","id":"5hkhpf45"}
+{"time":"2026-02-07T16:16:51.243936-06:00","level":"INFO","msg":"stream: started","id":"5hkhpf45"}
+{"time":"2026-02-07T16:16:51.243985-06:00","level":"INFO","msg":"sender: started","stream_id":"5hkhpf45"}
+{"time":"2026-02-07T16:16:51.243952-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"5hkhpf45"}}
+{"time":"2026-02-07T16:16:51.243945-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"5hkhpf45"}}
+{"time":"2026-02-07T16:16:51.491866-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T16:16:52.061678-06:00","level":"INFO","msg":"stream: closing","id":"5hkhpf45"}
+{"time":"2026-02-07T16:16:52.061699-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T16:16:52.062019-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T16:16:52.53668-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T16:16:52.795581-06:00","level":"INFO","msg":"sender: closed","stream_id":"5hkhpf45"}
+{"time":"2026-02-07T16:16:52.795558-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"5hkhpf45"}}
+{"time":"2026-02-07T16:16:52.795568-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"5hkhpf45"}}
+{"time":"2026-02-07T16:16:52.795918-06:00","level":"INFO","msg":"stream: closed","id":"5hkhpf45"}

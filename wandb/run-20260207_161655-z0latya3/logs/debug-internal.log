@@ -1,0 +1,16 @@
+{"time":"2026-02-07T16:16:55.190085-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2026-02-07T16:16:55.190124-06:00","level":"INFO","msg":"created symlink","path":"/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/wandb/run-20260207_161655-z0latya3/logs/debug-core.log"}
+{"time":"2026-02-07T16:16:55.299367-06:00","level":"INFO","msg":"created new stream","id":"z0latya3"}
+{"time":"2026-02-07T16:16:55.299395-06:00","level":"INFO","msg":"stream: started","id":"z0latya3"}
+{"time":"2026-02-07T16:16:55.29941-06:00","level":"INFO","msg":"sender: started","stream_id":"z0latya3"}
+{"time":"2026-02-07T16:16:55.299414-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"z0latya3"}}
+{"time":"2026-02-07T16:16:55.299403-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"z0latya3"}}
+{"time":"2026-02-07T16:16:55.53059-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T16:16:55.678956-06:00","level":"INFO","msg":"stream: closing","id":"z0latya3"}
+{"time":"2026-02-07T16:16:55.678977-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T16:16:55.679367-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T16:16:56.320303-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T16:16:56.457015-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"z0latya3"}}
+{"time":"2026-02-07T16:16:56.457038-06:00","level":"INFO","msg":"sender: closed","stream_id":"z0latya3"}
+{"time":"2026-02-07T16:16:56.457032-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"z0latya3"}}
+{"time":"2026-02-07T16:16:56.457298-06:00","level":"INFO","msg":"stream: closed","id":"z0latya3"}

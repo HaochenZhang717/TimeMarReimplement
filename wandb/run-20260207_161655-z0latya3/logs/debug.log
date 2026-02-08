@@ -1,0 +1,26 @@
+2026-02-07 16:16:55,185 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Current SDK version is 0.18.6
+2026-02-07 16:16:55,185 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Configure stats pid to 11900
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Loading settings from /Users/zhc/.config/wandb/settings
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Loading settings from /Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/wandb/settings
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'train_dual_vqvae.py', 'program_abspath': '/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py', 'program': '/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py'}
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_setup.py:_flush():79] Applying login settings: {}
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_init.py:_log_setup():533] Logging user logs to /Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/wandb/run-20260207_161655-z0latya3/logs/debug.log
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_init.py:_log_setup():534] Logging internal logs to /Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/wandb/run-20260207_161655-z0latya3/logs/debug-internal.log
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_init.py:init():619] calling init triggers
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'seed': 1234, 'load_dir': None, 'load_ver': None, 'load_v_num': None, 'output_dir': '../output', 'devices': [0], 'model_name': 'DualVQVAE', 'vocab_size': 512, 'z_channels': 256, 'ch': 256, 'dropout': 0.0, 'beta': 0.25, 'using_znorm': True, 'quant_conv_ks': 3, 'quant_resi': 0.5, 'share_quant_resi': 0, 'default_qresi_counts': 0, 'v_patch_nums': [1, 2, 3, 4, 5, 6], 'in_channels': 7, 'test_mode': False, 'ch_mult': [2, 2, 2], 'loss': 'mse', 'lr': 0.0001, 'lr_scheduler': 'step', 'lr_decay_steps': 500, 'lr_decay_rate': 0.5, 'dataloader': {'target': 'Utils.real_datasets.CustomDataset', 'params': {'name': 'ETTm1', 'proportion': 1.0, 'data_root': './dataset/ETTm1.csv', 'window': 24, 'save2npy': True, 'neg_one_to_one': True, 'seed': 123, 'period': 'train'}}, 'batch_size': 128}
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_init.py:init():669] starting backend
+2026-02-07 16:16:55,186 INFO    MainThread:11900 [wandb_init.py:init():673] sending inform_init request
+2026-02-07 16:16:55,188 INFO    MainThread:11900 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2026-02-07 16:16:55,188 INFO    MainThread:11900 [wandb_init.py:init():686] backend started and connected
+2026-02-07 16:16:55,194 INFO    MainThread:11900 [wandb_init.py:init():781] updated telemetry
+2026-02-07 16:16:55,216 INFO    MainThread:11900 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2026-02-07 16:16:55,528 INFO    MainThread:11900 [wandb_init.py:init():867] starting run threads in backend
+2026-02-07 16:16:55,609 INFO    MainThread:11900 [wandb_run.py:_console_start():2451] atexit reg
+2026-02-07 16:16:55,610 INFO    MainThread:11900 [wandb_run.py:_redirect():2299] redirect: wrap_raw
+2026-02-07 16:16:55,610 INFO    MainThread:11900 [wandb_run.py:_redirect():2364] Wrapping output streams.
+2026-02-07 16:16:55,610 INFO    MainThread:11900 [wandb_run.py:_redirect():2389] Redirects installed.
+2026-02-07 16:16:55,611 INFO    MainThread:11900 [wandb_init.py:init():911] run started, returning control to user process
+2026-02-07 16:16:55,679 WARNING MsgRouterThr:11900 [router.py:message_loop():75] message_loop has been closed

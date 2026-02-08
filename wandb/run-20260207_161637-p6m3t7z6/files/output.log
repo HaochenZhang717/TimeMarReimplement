@@ -1,0 +1,4 @@
+Using device: cpu
+Using config: configs/train_vq_ETTh1.yaml
+no dim in config
+load data from config

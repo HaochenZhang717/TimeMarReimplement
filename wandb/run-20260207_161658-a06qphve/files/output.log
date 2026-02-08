@@ -1,0 +1,60 @@
+Using device: cpu
+Using config: configs/train_vq_ETTm2.yaml
+no dim in config
+load data from config
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 326, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 220, in main
+    train_loader, val_loader = build_dataloader(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 71, in build_dataloader
+    train_dataset, val_dataset = build_dataset(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 29, in build_dataset
+    dataset = instantiate_from_config(dataloader_config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 18, in instantiate_from_config
+    return cls(**config.get("params", dict()))
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/Utils/real_datasets.py", line 36, in __init__
+    self.rawdata, self.scaler = self.read_data(data_root, self.name)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/Utils/real_datasets.py", line 137, in read_data
+    scaler = scaler.fit(data)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 450, in fit
+    return self.partial_fit(X, y)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 490, in partial_fit
+    X = self._validate_data(
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1012, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 745, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+ValueError: could not convert string to float: '2016-07-01 00:00:00'
+Traceback (most recent call last):
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 326, in <module>
+    main()
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/train_dual_vqvae.py", line 220, in main
+    train_loader, val_loader = build_dataloader(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 71, in build_dataloader
+    train_dataset, val_dataset = build_dataset(config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 29, in build_dataset
+    dataset = instantiate_from_config(dataloader_config)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/dataset/get_datasets.py", line 18, in instantiate_from_config
+    return cls(**config.get("params", dict()))
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/Utils/real_datasets.py", line 36, in __init__
+    self.rawdata, self.scaler = self.read_data(data_root, self.name)
+  File "/Users/zhc/Documents/PhD/projects/TimeMAR_Reimplement/Utils/real_datasets.py", line 137, in read_data
+    scaler = scaler.fit(data)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 450, in fit
+    return self.partial_fit(X, y)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/preprocessing/_data.py", line 490, in partial_fit
+    X = self._validate_data(
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/utils/validation.py", line 1012, in check_array
+    array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+  File "/opt/anaconda3/envs/read_result/lib/python3.9/site-packages/sklearn/utils/_array_api.py", line 745, in _asarray_with_order
+    array = numpy.asarray(array, order=order, dtype=dtype)
+ValueError: could not convert string to float: '2016-07-01 00:00:00'

@@ -100,7 +100,7 @@ def build_dataloader_var(config, data, args=None, window=24):
     else:
         window = config['dataloader']['params']['window']
         file_path=f'../output/samples/{data}_norm_truth_{window}_train.npy'
-     
+
     train_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
     ori_dataset = normalize_to_neg_one_to_one(np.load(file_path).astype(np.float32))
     repeat_times=10
@@ -121,3 +121,4 @@ def build_dataloader_var(config, data, args=None, window=24):
         drop_last=False
     )
     return train_loader, val_loader
+
