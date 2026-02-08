@@ -128,14 +128,19 @@ class CustomDataset(Dataset):
     def read_data(filepath, name=''):
         """Reads a single .csv
         """
-        df = pd.read_csv(filepath, header=0)
-        # if name == 'ETTh':
-        if 'ETTh' in name:
-            df.drop(df.columns[0], axis=1, inplace=True)
-        data = df.values
-        scaler = MinMaxScaler()
-        scaler = scaler.fit(data)
-        return data, scaler
+        if '.csv' in filepath:
+            df = pd.read_csv(filepath, header=0)
+            if 'ETTh' in name:
+                df.drop(df.columns[0], axis=1, inplace=True)
+            data = df.values
+            scaler = MinMaxScaler()
+            scaler = scaler.fit(data)
+            return data, scaler
+        elif '.mat' in filepath:
+            data = io.loadmat(filepath + '/sim4.mat')['ts']
+            scaler = MinMaxScaler()
+            scaler = scaler.fit(data)
+            return data, scaler
 
     def __getitem__(self, ind):
         if self.period == 'test':

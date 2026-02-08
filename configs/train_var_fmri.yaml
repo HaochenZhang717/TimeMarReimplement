@@ -25,7 +25,7 @@ dataloader:
   params:
     name: fmri
     proportion: 1.0  # Set to rate < 1 if training conditional generation
-    data_root: ./dataset/sim4.csv
+    data_root: ./dataset/sim4.mat
     window: 24  # seq_length
     save2npy: True
     neg_one_to_one: True
